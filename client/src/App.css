@@ -1,0 +1,118 @@
+.icon,
+.text {
+  vertical-align: middle;
+  display: inline-block;
+}
+.k-widget {
+  border: none !important;
+}
+.k-grid-header {
+  background-color: #fff !important;
+  border: none !important;
+  border-bottom: 1px solid #eff6ff !important;
+  overflow: visible;
+}
+
+.k-filtercell {
+  max-height: 30px;
+}
+
+.k-grid td {
+  border: none !important;
+  overflow: visible;
+}
+.k-grid th {
+  border: none !important;
+}
+/* .k-treeview .k-in.k-state-selected {
+  background-color: #1f98f4 !important;
+} */
+
+.k-treeview .k-in.k-state-selected {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.k-widget ::selection,
+.k-block ::selection,
+.k-panel ::selection {
+  background-color: #1f98f4 !important;
+}
+
+.k-grid-header,
+.k-grid-toolbar,
+.k-grouping-header,
+.k-grid-add-row,
+.k-grid-footer {
+  background-color: #fff !important;
+}
+
+.k-grid-toolbar {
+  display: flex !important;
+  align-items: flex-end !important;
+  width: 100%;
+  border: none !important;
+}
+
+/* Tabs */
+/* .tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active {
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+} */
+
+/* Checkbox Styles */
+
+.k-checkbox-label::before {
+  border: none;
+  background-color: #dfe7f2;
+}
+
+.k-checkbox:checked + .k-checkbox-label::after {
+  background-color: #1f98f4;
+}
+
+.error-input {
+  border-color: red !important;
+}
+
+.k-checkbox-label::before,
+.k-radio-label::before {
+  border-width: none !important;
+  border-style: none !important;
+}
+
+/* Radiobutton */
+.k-radio-label::before {
+  transform: scale(2) !important;
+}
+
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.marker-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.k-dropdown {
+  z-index: 30000;
+}
+
+.k-animation-container {
+  z-index: 10003;
+}
