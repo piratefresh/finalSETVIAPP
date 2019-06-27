@@ -94,6 +94,8 @@ function Resource() {
 
   const resources = filterResources(data.GetResources, selectedCategoryId);
 
+  console.log(resources);
+
   const showModal = () => {
     setShowState(true);
   };

@@ -21,6 +21,7 @@
     "apollo-link-state": "^0.4.2",
     "auth0-js": "^9.10.4",
     "chart.js": "^2.8.0",
+    "dayjs": "^1.8.14",
     "deep-rename-keys": "^0.2.1",
     "deepdash-es": "^4.2.5",
     "emotion": "^10.0.9",

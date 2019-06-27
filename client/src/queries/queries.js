@@ -185,4 +185,52 @@ const GET_MAP_MARKERS = gql`
   }
 `;
 
-export {GET_MASTERLISTS, GET_TEMPLATES, GET_PRESENTATIONS, GET_MAP_MARKERS};
+const GET_RESOURCE_ANALYTICS = gql`
+  query {
+    getResourceStats {
+      Thumbnail
+      ResourceID
+      ID
+      TotalViews
+      TotalTimeSpent
+      TimesAddedToPreso
+      TimesSharedAsResource
+    }
+  }
+`;
+
+const GET_ALL_USERS = gql`
+  query {
+    getUsersGroups {
+      GroupName
+      Users {
+        Email
+        FirstName
+        LastName
+        Status
+        DateAdded
+        LastActiveDate
+      }
+    }
+  }
+`;
+
+const GET_ALL_GROUPS = gql`
+  query {
+    getUsersGroups {
+      GroupName
+      GroupDescription
+      IsActive
+    }
+  }
+`;
+
+export {
+  GET_MASTERLISTS,
+  GET_TEMPLATES,
+  GET_PRESENTATIONS,
+  GET_MAP_MARKERS,
+  GET_RESOURCE_ANALYTICS,
+  GET_ALL_USERS,
+  GET_ALL_GROUPS
+};

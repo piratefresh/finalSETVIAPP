@@ -31,6 +31,8 @@ const Templates = lazy(() => import("./routes/templates"));
 const Settings = lazy(() => import("./routes/settings"));
 const Presentations = lazy(() => import("./routes/presentations"));
 const Notifications = lazy(() => import("./routes/notifications"));
+const Users = lazy(() => import("./routes/users"));
+const Groups = lazy(() => import("./routes/groups"));
 // Analytics
 const Index = lazy(() => import("./routes/index"));
 const Callback = lazy(() => import("./routes/callback"));
@@ -38,7 +40,7 @@ const Shared = lazy(() => import("./routes/shared"));
 const Login = lazy(() => import("./routes/login"));
 const MapView = lazy(() => import("./routes/map"));
 
-function App() {
+function App(props) {
   // Get Mode Preference from Localstorage
   const stored = localStorage.getItem("isDarkMode");
   const [isDarkMode, setIsDarkMode] = useState(
@@ -50,7 +52,7 @@ function App() {
   );
   useEffect(() => {
     async function checkAuth() {
-      if (this.props.location.pathname === "/callback") return;
+      if (props.location.pathname === "/callback") return;
       try {
         await auth.silentAuth();
         this.forceUpdate();
@@ -85,6 +87,8 @@ function App() {
               <PrivateRoute path="/map" component={MapView} />
               <PrivateRoute path="/settings" component={Settings} />
               <PrivateRoute path="/resources" component={AppResources} />
+              <PrivateRoute path="/users" component={Users} />
+              <PrivateRoute path="/groups" component={Groups} />
               <PrivateRoute
                 exact
                 path="/analytics/resources"

@@ -176,6 +176,7 @@ class GridContainer extends React.Component {
                   <Column
                     key={name}
                     field={name}
+                    title=" "
                     width="100px"
                     style={{border: "none"}}
                     cell={props => (
@@ -228,6 +229,7 @@ class GridContainer extends React.Component {
                   <Column
                     key={name}
                     field={name}
+                    title=" "
                     cell={props => (
                       <td style={{position: "relative"}}>
                         <ButtonStyleSecondary small>View</ButtonStyleSecondary>

@@ -1,7 +1,48 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import {Formik} from "formik";
 import styled from "styled-components";
 import CloseIcon from "../../icons/closeIcon";
+
+const Modal = ({handleClose, show, modalTitle, children}) => {
+  const node = useRef();
+
+  const handleClickOutside = e => {
+    if (node.current.contains(e.target)) {
+      // inside click
+      console.log("inside");
+      return;
+    }
+    // outside click
+    console.log("outside");
+    return handleClose();
+  };
+
+  useEffect(() => {
+    if (show) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [show]);
+
+  return (
+    <ModalStyles show={show}>
+      <section className="modal-main" ref={node}>
+        <div className="modalHeader">
+          <h4>{modalTitle}</h4>
+          <CloseIcon onClick={handleClose} />
+        </div>
+        {children}
+      </section>
+    </ModalStyles>
+  );
+};
+
+export default Modal;
 
 const ModalStyles = styled.div`
   display: ${props => (props.show ? "block" : "none")};
@@ -56,19 +97,3 @@ const ModalStyles = styled.div`
     }
   }
 `;
-
-const Modal = ({handleClose, show, modalTitle, children}) => {
-  return (
-    <ModalStyles show={show}>
-      <section className="modal-main">
-        <div className="modalHeader">
-          <h4>{modalTitle}</h4>
-          <CloseIcon onClick={handleClose} />
-        </div>
-        {children}
-      </section>
-    </ModalStyles>
-  );
-};
-
-export default Modal;

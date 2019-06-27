@@ -8,10 +8,19 @@ import categories from "./resolvers/categories";
 import templates from "./resolvers/templates";
 import presentations from "./resolvers/presentations";
 import user from "./resolvers/user";
+import users from "./resolvers/users";
+import resourceAnalytics from "./resolvers/resourceAnalytics";
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers: merge(categories, templates, presentations, user),
+  resolvers: merge(
+    categories,
+    templates,
+    presentations,
+    user,
+    users,
+    resourceAnalytics
+  ),
   engine: {
     apiKey: "service:piratefresh-9141:cjxsYMUckOlvppJ06gVg9A"
   }

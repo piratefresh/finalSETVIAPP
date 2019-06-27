@@ -41,6 +41,7 @@ const categories = gql`
     FileType: String
     ChildResources: [ChildResources]
     ResourceCategoryMembership: [ResourceCategoryMembership]!
+    DateAdded: String!
   }
   type ChildResources {
     ID: Int!

@@ -16,6 +16,7 @@ export default function Presentations() {
   const presentations = data.getPresentations;
   const resources = data.GetResources;
 
+  // Gets the thumbnails for presentations
   let result = resources.filter(resource => {
     return presentations.some(presentation =>
       presentation.PresentationItems.map(
@@ -23,7 +24,7 @@ export default function Presentations() {
       )
     );
   });
-  console.log(result);
+
   result.map(result =>
     presentations.map(presentation => {
       presentation.PresentationItems.map(item => {
@@ -33,7 +34,7 @@ export default function Presentations() {
       });
     })
   );
-  console.log(presentations);
+
   return (
     <Fragment>
       <MainPageTitle>Presentations</MainPageTitle>
